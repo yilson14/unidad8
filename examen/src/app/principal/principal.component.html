@@ -1,0 +1,36 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <br>
+
+   
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand"><h1>Catálago de productos</h1></a>
+           
+              <form class="form-group  ml-auto">
+                <label for="buscador">¿Qué estás buscando?</label>
+                <input name="buscador"class="form-control mr-sm-2" type="search" placeholder="Busar.." aria-label="Search" (keyup)="buscador(texto.value)" #texto>
+              </form>
+            
+          </nav>
+   
+          <div class="justify-content-start">
+            <div class="horizontal"  >
+            <div *ngFor="let producto of subproducto" class="col-sm-3">
+                <div  class="card">
+                    <img class="card-img-top" [src]="'../../assets/imagenesBase/' + producto.imagen" alt="Card image cap" >
+                    <div class="card-body">
+                      <h5 class="card-title">{{producto.nombre | uppercase}}</h5>
+                      <p class="card-text"><b>Precio:</b> {{producto.precio}}</p>
+                      <p class="card-text"><b>Unidades disponibles:</b> {{producto.unidades}}</p>
+                      <button class="btn btn-primary btn-sm" (click)="vermas(producto.nombre)" >Ver Mas</button>
+                      <button class="btn btn-warning btn-sm" (click)="agregar(producto.imagen,producto.nombre,producto.precio, uni.value)">Añadir</button>
+                      <input class="col-sm-4" type="number" value="1" min="1" [max]="producto.unidades" #uni>
+                    </div>
+                  </div> 
+                </div>
+            </div>
+          </div>
+          
+  
+
+</div>

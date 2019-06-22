@@ -1,0 +1,26 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <br>
+  <div class="margen container">
+    <div class="row">
+      <div class="col-sm-3">
+          <h1>{{nombre}}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <img [src]="'../../assets/imagenesBase/' + imagen" width="80%" height="100%">
+      </div>
+      <div class="col-sm-6">
+        <h2><b>Precio: </b>{{precio}}</h2>
+        <h2><b>Unidades Disponibles: </b>{{unidades}}</h2>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <button class="btn btn-primary" (click)="atras()">Atras</button>
+        </div>
+    </div>
+  </div>
+  
+</div>
